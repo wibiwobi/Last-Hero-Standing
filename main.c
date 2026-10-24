@@ -129,15 +129,51 @@
             knightDamage
             knightHeal
             knightDodgeFailureRate
-    SCREEN
-                        HERO          MONSTER - (Monster Name)
-HP                       100                  400
-ATTACK                   
-HEAL
-DODGE FAILURE RATE
+
+SCREEN - In battle
+                         HERO          MONSTER - (Monster Name)
+HP                        100                  400
+ATTACK                    100                  150
+HEAL			   50                  10	
+DODGE FAILURE RATE         15                   5 
 
 
-    FLOW
+1. ATTACK 
+2. HEAL
+3. DODGE
+
+Move: 
+
+
+
+
+
+SCREEN - Loot
+
+Rewards: 
+
+Next monster stats
+                        MONSTER - (Monster Name)
+HP                               400
+ATTACK                           150
+HEAL		                 10	
+DODGE FAILURE RATE               5 
+
+
+LOOT
+
+1. 
+2. 
+3.
+
+Input: 
+
+
+
+
+
+
+FLOW
 
 
 
