@@ -1,109 +1,108 @@
 // Hero
 // Five Monsters
-    // Monster's move is random (attack, heal, dodge, special)
-        // 1st stage - Warrior Skeleton
-        // 2nd stage - Swedish Viking
-        // 3rd stage - Elite Samurai
-        // 4th stage - Giant Zombie
-        // 5th stage - Undead Knight
+// Monster's move is random (attack, heal, dodge, special)
+// 1st stage - Warrior Skeleton
+// 2nd stage - Swedish Viking
+// 3rd stage - Elite Samurai
+// 4th stage - Giant Zombie
+// 5th stage - Undead Knight
 
 // Goal: Defeat all the monsters
 // Two scenarios
-    // Hero defeats all the monsters
-    // He dies, he goes back to the 1st stage
+// Hero defeats all the monsters
+// He dies, he goes back to the 1st stage
 
 // MOVES
-    // Hero -> HP = 100 -> fully healed every next stage
-        // attack 
-           // sword slash - 30 initially, chance to crit (10%) x 2
-        // heal 
-            // 10 initally
-        // dodge
-            // (15%) to fail plus heal + 5 if successfull
-    // Monster
-        // 1st stage - Warrior Skeleton - > HP 150
-            // attack 
-                // bone slash - 30 initially, chance to crit (5%) x 1.5
-            // heal 
-                // 10
-            // dodge
-                // chance to fail 30%
-            // loot - pick one (+ 30 HP, ATTACK 50)
-                // + 2 crit, - 2 percent chance
-                // 100 health
-                // - 5 % dodge to fail
-                // heal + 10
+// Hero -> HP = 100 -> fully healed every next stage
+// attack
+// sword slash - 30 initially, chance to crit (10%) x 2
+// heal
+// 10 initally
+// dodge
+// (15%) to fail plus heal + 5 if successfull
+// Monster
+// 1st stage - Warrior Skeleton - > HP 150
+// attack
+// bone slash - 30 initially, chance to crit (5%) x 1.5
+// heal
+// 10
+// dodge
+// chance to fail 30%
+// loot - pick one (+ 30 HP, ATTACK 50)
+// + 2 crit, - 2 percent chance
+// 100 health
+// - 5 % dodge to fail
+// heal + 10
 
+// 2nd stage - Swedish Viking  - > HP 250
+// attack
+// axe throw 60, chance to fail 30%
+// heal
+// 15
+// dodge
+// chance to fail 25%
+// loot - pick one (+ 60 HP, ATTACK 50)
+// + 0.5 crit, - 0.5% chance
+// 100 health
+// - 3 % dodge to fail
 
-        // 2nd stage - Swedish Viking  - > HP 250
-            // attack 
-                // axe throw 60, chance to fail 30%
-            // heal 
-                // 15
-            // dodge
-                // chance to fail 25%
-            // loot - pick one (+ 60 HP, ATTACK 50)
-                // + 0.5 crit, - 0.5% chance
-                // 100 health
-                // - 3 % dodge to fail
-
-        // 3rd stage - Elite Samurai  - > HP 300
-        // attack 
-                // fast slash 80, chance to fail 25%
-            // heal 
-                // 5
-            // dodge
-                // chance to fail 20%
-            // loot - pick one // loot - pick one (+ 100 HP, ATTACK 50)
-                // + 0.5 crit, - 2% chance
-                // 70 health
-                // - 2 % dodge to fail
-        // 4th stage - Giant Zombie - 350
-        // attack 
-                // 90, chance to fail 25%
-            // heal 
-                // 20
-            // dodge
-                // chance to fail 50%
-            // loot - pick one
-                // + 1 crit, - 0.5% chance
-                // + 200 health
-                // 0% chance failure rate of dodging + 20 heal every dodge
-        // 5th stage - Undead Knight - 500
-        // attack 
-                // 150, chance to crit 60 percent, * 1.5 
-            // heal 
-                // fully healed - 20 percent chance, if not heal 50
-            // dodge
-                // chance to fail 5% 
-
+// 3rd stage - Elite Samurai  - > HP 300
+// attack
+// fast slash 80, chance to fail 25%
+// heal
+// 5
+// dodge
+// chance to fail 20%
+// loot - pick one // loot - pick one (+ 100 HP, ATTACK 50)
+// + 0.5 crit, - 2% chance
+// 70 health
+// - 2 % dodge to fail
+// 4th stage - Giant Zombie - 350
+// attack
+// 90, chance to fail 25%
+// heal
+// 20
+// dodge
+// chance to fail 50%
+// loot - pick one
+// + 1 crit, - 0.5% chance
+// + 200 health
+// 0% chance failure rate of dodging + 20 heal every dodge
+// 5th stage - Undead Knight - 500
+// attack
+// 150, chance to crit 60 percent, * 1.5
+// heal
+// fully healed - 20 percent chance, if not heal 50
+// dodge
+// chance to fail 5%
 
 /*
     VARIABLES
         hero
-            heroHealth
-            attackDamage
-            criticalChance 
-            criticalDamage
-            heal
-            dodgeFailureRate
-            
+
+            heroHealth -> int
+            attackDamage -> int
+            criticalChance -> float
+            criticalDamage -> float
+            heal -> int
+            dodgeFailureRate -> int
+
         warrior skeleton
             skeletonHealth
             skeletonDamage
-            criticalChance 
+            criticalChance
             criticalDamage
             skeletonHeal
             skeletonDodgeFailureRate
 
-            loot 
+            loot
                 heroHealth += 30
                 attackDamage += 50
 
                 pick one
                     1. chance criticalDamage += 2, criticalChance -= 2
                     2. heroHealth += 100
-                    3. dodgeFailureRate -= 5 
+                    3. dodgeFailureRate -= 5
                     4. heal += 10
 
         swedish viking
@@ -134,15 +133,15 @@ SCREEN - In battle
                          HERO          MONSTER - (Monster Name)
 HP                        100                  400
 ATTACK                    100                  150
-HEAL			   50                  10	
-DODGE FAILURE RATE         15                   5 
+HEAL			          50                   10
+DODGE FAILURE RATE        15                   5
+CRITICAL CHANCE           5                    1
+CRITICAL DAMAGE           2                    4
 
-
-1. ATTACK 
+1. ATTACK
 2. HEAL
-3. DODGE
 
-Move: 
+Move:
 
 
 
@@ -150,23 +149,23 @@ Move:
 
 SCREEN - Loot
 
-Rewards: 
+Rewards:
 
 Next monster stats
                         MONSTER - (Monster Name)
 HP                               400
 ATTACK                           150
-HEAL		                 10	
-DODGE FAILURE RATE               5 
+HEAL		                 10
+DODGE FAILURE RATE               5
 
 
 LOOT
 
-1. 
-2. 
+1.
+2.
 3.
 
-Input: 
+Input:
 
 
 
@@ -177,8 +176,128 @@ FLOW
 
 
 
+*/
+
+#include <stdio.h>
+
+void displayBattleScreen(
+    char *heroName, int heroHealth, int heroAttackDamage, float heroCriticalChance, float heroCriticalDamage, int heroHeal, int heroDodgeFailureRate,
+
+    char *monsterName, int monsterHealth, int monsterAttackDamage, float monsterCriticalChance, float monsterCriticalDamage, int monsterHeal, int monsterDodgeFailureRate)
+
+{
+
+    //                          hero           monster name here
+    // HP                        100                  400
+    // ATTACK                    100                  150
+    // HEAL			          50                   10
+    // DODGE FAILURE RATE        15                   5
+    // CRITICAL CHANCE           5                    1
+    // CRITICAL DAMAGE
+
+    printf("\t\t\t\t\tHero - %s\t\tMonster - %s\n", heroName, monsterName);
+    printf("HP\t\t\t\t\t%d \t\t\t\t%d\n", heroHealth, monsterHealth);
+    printf("ATTACK\t\t\t\t\t%d \t\t\t\t%d\n", heroAttackDamage, monsterAttackDamage);
+    printf("HEAL\t\t\t\t\t%d \t\t\t\t%d\n", heroHeal, monsterHeal);
+    printf("DODGE FAILURE RATE\t\t\t%d \t\t\t\t%d\n", heroDodgeFailureRate, monsterDodgeFailureRate);
+    printf("CRITICAL CHANCE\t\t\t\t%.2f \t\t\t\t%.2f\n", heroCriticalChance, monsterCriticalChance);
+    printf("CRITICAL DAMAGE\t\t\t\t%.2f \t\t\t\t%.2f\n", heroCriticalDamage, monsterCriticalDamage);
+}
+
+// Monster's move is random (attack, heal, dodge, special)
+// 1st stage - Warrior Skeleton
+// 2nd stage - Swedish Viking
+// 3rd stage - Elite Samurai
+// 4th stage - Giant Zombie
+// 5th stage - Undead Knight
+
+// Hero -> HP = 100 -> fully healed every next stage
+// attack
+// sword slash - 30 initially, chance to crit (10%) x 2
+// heal
+// 10 initally
+// dodge
+// (15%) to fail plus heal + 5 if successfull
+// Monster
+// 1st stage - Warrior Skeleton - > HP 150
+// attack
+// bone slash - 30 initially, chance to crit (5%) x 1.5
+// heal
+// 10
+// dodge
+// chance to fail 30%
+// loot - pick one (+ 30 HP, ATTACK 50)
+// + 2 crit, - 2 percent chance
+// 100 health
+// - 5 % dodge to fail
+// heal + 10
+
+int main()
+{
+    displayBattleScreen(
+        "rei", 100, 30, 10, 2, 10, 15,
+        "Warrior Skeleton", 150, 30, 5, 1.5, 10, 30);
+
+    /*
+    // stage 1 - skeleton
+    while(true)
+    {
+        // display screen
+        // input user move
+
+
+        // user attacks
+         // monster moves -> if dodge is successful monster dodges -> user's attack didn't land
+         // crit? * by attack then user lands attack
+         // no crit? user lands attack normally
+
+        // user heals
+            // user heals normally
+
+        // check if monster is dead -> winner move to next stage
+
+        // monster attacks
+         // user moves -> if dodge is successful user dodges -> monster didn't land attack
+         // crit? * by attack then monster lands attack
+         // no crit? monster lands attack normally
+
+        // monster heals
+            // monster heals normally
+
+        // check if user is dead -> user loses -> go back to the first stage
+
+
+    }
+
+
+    // stage 2 - swedish viking
+    while(true)
+    {
+
+    }
+
+    // stage 3 - elite samurai
+    while(true)
+    {
+
+    }
+
+    // stage 4 - giant zombie
+    while(true)
+    {
+
+    }
+
+    // stage 5 - undead knight
+    while(true)
+    {
+
+    }
+
+
 
 
 
 
 */
+}
