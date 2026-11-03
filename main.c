@@ -187,14 +187,6 @@ void displayBattleScreen(
 
 {
 
-    //                          hero           monster name here
-    // HP                        100                  400
-    // ATTACK                    100                  150
-    // HEAL			          50                   10
-    // DODGE FAILURE RATE        15                   5
-    // CRITICAL CHANCE           5                    1
-    // CRITICAL DAMAGE
-
     printf("\t\t\t\t\tHero - %s\t\tMonster - %s\n", heroName, monsterName);
     printf("HP\t\t\t\t\t%d \t\t\t\t%d\n", heroHealth, monsterHealth);
     printf("ATTACK\t\t\t\t\t%d \t\t\t\t%d\n", heroAttackDamage, monsterAttackDamage);
@@ -238,36 +230,55 @@ int main()
         "rei", 100, 30, 10, 2, 10, 15,
         "Warrior Skeleton", 150, 30, 5, 1.5, 10, 30);
 
-    /*
-    // stage 1 - skeleton
-    while(true)
+    // hero details
+    char *heroName = "jin";
+    int heroHealth = 100;
+    int heroAttackDamage = 30;
+    float heroCriticalChance = 10;
+    float heroCriticalDamage = 2;
+    int heroHeal = 10;
+    int heroDodgeFailureRate = 15;
+
+    // monster - warrior skeleton details
+    char *monsterName,
+        int monsterHealth,
+        int monsterAttackDamage,
+        float monsterCriticalChance,
+        float monsterCriticalDamage,
+        int monsterHeal,
+        int monsterDodgeFailureRate
+
+        // stage 1 - skeleton
+        while (1)
     {
         // display screen
+        displayBattleScreen(
+            heroName, heroHealth, heroAttackDamage, heroCriticalChance, heroCriticalDamage, heroHeal, heroDodgeFailureRate,
+            monsterName, monsterHealth, monsterAttackDamage, monsterCriticalChance, monsterCriticalDamage, monsterHeal, monsterDodgeFailureRate);
         // input user move
 
-
         // user attacks
-         // monster moves -> if dodge is successful monster dodges -> user's attack didn't land
-         // crit? * by attack then user lands attack
-         // no crit? user lands attack normally
+        // monster moves -> if dodge is successful monster dodges -> user's attack didn't land
+        // crit? * by attack then user lands attack
+        // no crit? user lands attack normally
 
         // user heals
-            // user heals normally
+        // user heals normally
 
         // check if monster is dead -> winner move to next stage
 
         // monster attacks
-         // user moves -> if dodge is successful user dodges -> monster didn't land attack
-         // crit? * by attack then monster lands attack
-         // no crit? monster lands attack normally
+        // user moves -> if dodge is successful user dodges -> monster didn't land attack
+        // crit? * by attack then monster lands attack
+        // no crit? monster lands attack normally
 
         // monster heals
-            // monster heals normally
+        // monster heals normally
 
         // check if user is dead -> user loses -> go back to the first stage
-
-
     }
+
+    /*
 
 
     // stage 2 - swedish viking
